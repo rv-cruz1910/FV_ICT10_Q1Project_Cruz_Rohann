@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form - Volleyball Store</title>
+
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #eedd92, #f3c136);
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    nav {
+      background: linear-gradient(90deg, #1e3c72, #2a5298);
+      padding: 12px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 17px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+
+    h1 {
+      background-color: #2656f5;
+      color: white;
+      padding: 20px;
+      margin: 0;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    form {
+      background: white;
+      padding: 25px;
+      margin: 40px auto;
+      width: 60%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    .products {
+      margin-top: 15px;
+    }
+
+    button {
+      background: linear-gradient(90deg, #2656f5, #1b4bd8);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #153ba1;
+      box-shadow: 0 0 15px rgba(38,86,245,0.6);
+      transform: scale(1.05);
+    }
+
+    #output {
+      margin-top: 25px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background: #2656f5;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 15px;
+      margin-top: 40px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="SW2.html">🏐 Order</a>
+    <a href="shop.html">🛒 Shop List</a>
+    <a href="contact.html">✉️ Contact Us</a>
+  </nav>
+
+  <h1>🏐 Volleyball Store - Order Form</h1>
+
+  <form id="orderForm">
+    <label>Name:</label>
+    <input type="text" id="custName" required>
+
+    <label>Address:</label>
+    <input type="text" id="custAddress" required>
+
+    <label>Contact:</label>
+    <input type="text" id="custContact" required>
+
+    <div class="products">
+      <p><strong>Select Products:</strong></p>
+      <input type="checkbox" value="4400" id="p1"> Mikasa V300W (₱4,400)<br>
+      <input type="checkbox" value="5500" id="p2"> Molten V5M5000 (₱5,500)<br>
+      <input type="checkbox" value="5600" id="p3"> Mikasa V200W (₱5,600)<br>
+      <input type="checkbox" value="5500" id="p4"> Mikasa BV550C (₱5,500)<br>
+      <input type="checkbox" value="3000" id="p5"> Wilson OPTX AVP (₱3,000)<br>
+    </div>
+
+    <center><button type="button" py-click="generate_order()">Submit Order</button></center>
+  </form>
+
+  <div id="output"></div>
+
+  <footer>
+    <p><strong>🏪 Store Hours:</strong><br>
+    Monday – Friday: 9:00 AM – 6:00 PM<br>
+    Saturday: 10:00 AM – 4:00 PM<br>
+    Sunday: Closed</p>
+    <p>© 2025 Volleyball Store. All rights reserved.</p>
+  </footer>
+
+  <py-script src="main.py"></py-script>
+</body>
+</html>
